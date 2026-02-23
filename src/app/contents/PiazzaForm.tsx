@@ -16,7 +16,7 @@ function PiazzaForm({ addMessage }: { addMessage: (event: React.FormEvent<HTMLFo
       <input
         type="text"
         name="piazza"
-        className="w-full p-3 rounded bg-light-1 dark:bg-dark-1"
+        className="w-full p-3 rounded bg-tier-1"
         value={message}
         onChange={(event) => setMessage(event.target.value)}
       />

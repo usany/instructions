@@ -1,5 +1,9 @@
 @import "tailwindcss";
 
+.bg-tier-1 {
+  background-color: var(--bg-tier-1);
+}
+
 :root {
     --primary: #2e7d32;
     --primary-hover: #1b5e20;
