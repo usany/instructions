@@ -15,24 +15,6 @@ const Carousels = ({completedAction}) => {
   const handleCardNumber = (newValue) => setCardNumber(newValue)
   const {language} = useLanguage()
   const messagesList = [
-    // {
-    //   id: '1',
-    //   text: {
-    //     choose: 1
-    //   },
-    //   creatorId: '1',
-    //   connectedId: '2',
-    //   round: 5,
-    // },
-    // {
-    //   id: '2',
-    //   text: {
-    //     choose: 2
-    //   },
-    //   creatorId: '2',
-    //   connectedId: '1',
-    //   round: 5,
-    // },
     {
       id: Date.now().toString(),
       action: 1,
