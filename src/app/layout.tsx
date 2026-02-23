@@ -31,7 +31,6 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             <ThemeProvider initialTheme={theme as 'light' | 'dark'}>
               <MuiThemeProvider>
                 <QueryProvider>
-                  <RainAnimation />
                   <TopBar />
                   <main style={{ paddingTop: '60px' }}>
                     {children}
