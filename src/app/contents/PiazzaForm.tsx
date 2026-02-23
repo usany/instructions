@@ -10,17 +10,17 @@ function PiazzaForm({ addMessage }: { addMessage: (event: React.FormEvent<HTMLFo
       addMessage(event)
       setMessage('')
     }}>
-      <div className="flex items-center px-1 rounded bg-tier-2">
+      <div className="flex items-center px-1 rounded bg-light-2 dark:bg-dark-2">
         <PlusCircle />
       </div>
       <input
         type="text"
         name="piazza"
-        className="w-full p-3 rounded bg-tier-1"
+        className="w-full p-3 rounded bg-light-1 dark:bg-dark-1"
         value={message}
         onChange={(event) => setMessage(event.target.value)}
       />
-      <button className="w-1/6 rounded bg-tier-2" type="submit">
+      <button className="w-1/6 rounded bg-light-2 dark:bg-dark-2" type="submit">
         {language === 'en' ? 'Send' : '전송'}
       </button>
     </form>
