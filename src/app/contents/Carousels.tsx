@@ -8,6 +8,7 @@ import {
 import { useEffect, useState } from 'react'
 import CardView from './CardView'
 import { useLanguage } from '@/app/context/LanguageContext'
+import staticImg from '../assets/blue.png'
 
 const Carousels = ({completedAction}) => {
   const [cardNumber, setCardNumber] = useState(1)
@@ -39,6 +40,9 @@ const Carousels = ({completedAction}) => {
       locationTwo: '자료열람실',
       startTime: Date.now(),
       finishTime: Date.now(),
+      creatorProfileImage: true,
+      creatorDefaultProfile: staticImg.src,
+      creatorProfileImageUrl: staticImg.src
     },
     {
       id: Date.now().toString()+1,
@@ -47,6 +51,9 @@ const Carousels = ({completedAction}) => {
       locationTwo: '자료열람실',
       startTime: Date.now(),
       finishTime: Date.now(),
+      creatorProfileImage: true,
+      creatorDefaultProfile: staticImg.src,
+      creatorProfileImageUrl: staticImg.src
     },
   ]
 
