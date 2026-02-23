@@ -6,7 +6,6 @@ const CardViewTop = ({ message }) => {
   // const {borrowing, lending} = useTexts()
   const { language } = useLanguage();
   
-  const profileUrl = message?.creatorUrl
   const item = message.item
   // const action = message.text.choose === 1 ? borrowing : lending
   const passingValue = {
@@ -19,16 +18,13 @@ const CardViewTop = ({ message }) => {
     <div className="flex justify-between gap-1">
       <Avatars
         element={passingValue}
-        uid={message.creatorId}
         profile={false}
-        profileUrl={profileUrl}
-        piazza={null}
       />
       <div className="flex items-center">
         <Chip
           label={
             <div className="text-xs">
-              {item} 빌리기
+              {item} {language === 'ko' ? '빌리기' : 'borrowing'}
             </div>
           }
         />
