@@ -30,7 +30,6 @@ export default function TopBar() {
     toggleTheme();
   };
 
-
   return (
     <>
       <div className={styles.topBar}>
