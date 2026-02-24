@@ -41,7 +41,7 @@ export default function TopBar() {
             width={84}
             height={24}
           />
-          {/* <span>KHUSAN</span> */}
+          {/* KHUSAN */}
         </Link>
         <div className={styles.topBarActions}>
           <button
