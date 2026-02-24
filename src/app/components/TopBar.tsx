@@ -17,7 +17,7 @@ export default function TopBar() {
 
   useEffect(() => {
     const checkScreenSize = () => {
-      setIsSmallScreen(window.innerWidth < 1024); // lg breakpoint
+      setIsSmallScreen(window.innerWidth < 1024); // breakpoint
     };
 
     checkScreenSize();
