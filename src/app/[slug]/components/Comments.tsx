@@ -184,7 +184,7 @@ export default memo(function Comments({ slug }: CommentsProps) {
   // Edit comment mutation
   const editCommentMutation = useMutation(
     async (editData: { id: number; content: string }) => {
-      const response = await fetch(`http://localhost:8787/api/comment/${slug}`, {
+      const response = await fetch(`http://express-d1-app.ckd-qja.workers.dev/api/comment/${slug}`, {
         method: 'PUT',
         headers: {
           'Content-Type': 'application/json',
