@@ -340,7 +340,7 @@ export default memo(function Comments({ slug }: CommentsProps) {
           />
         </div>
         
-        <div className={styles.formGroup}>
+        {/* <div className={styles.formGroup}>
           <label htmlFor="email" className={styles.label}>{t.emailLabel}</label>
           <input
             type="email"
@@ -351,7 +351,7 @@ export default memo(function Comments({ slug }: CommentsProps) {
             placeholder={t.emailPlaceholder}
             required
           />
-        </div>
+        </div> */}
         
         <div className={styles.formGroup}>
           <label htmlFor="content" className={styles.label}>{t.commentLabel}</label>
