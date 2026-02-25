@@ -14,7 +14,7 @@ export const metadata: Metadata = {
   title: 'KHUSAN',
   description: 'Documentation for KHUSAN',
   icons: {
-    icon: '/favicon.png',
+    icon: '/faviconImage.png',
   },
 };
 
