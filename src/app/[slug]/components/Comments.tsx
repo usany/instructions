@@ -91,11 +91,11 @@ export default memo(function Comments({ slug }: CommentsProps) {
     password: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
-  const [replyingTo, setReplyingTo] = useState<number | null>(null);
   const [editingComment, setEditingComment] = useState<number | null>(null);
   const [editContent, setEditContent] = useState('');
   const [deletePassword, setDeletePassword] = useState('');
   const [showDeleteModal, setShowDeleteModal] = useState<number | null>(null);
+  const [replyingTo, setReplyingTo] = useState<number | null>(null);
   const [error, setError] = useState<string | null>(null);
 
   // Fetch comments using React Query
