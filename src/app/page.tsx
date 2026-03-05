@@ -43,7 +43,7 @@ export default function RootPage() {
         <p className={styles.subtitle}>
           {translation.subtitle}
         </p>
-        <div className={`${styles.heroVisual} ${isLargeScreen ? '' : styles.heroVisualSmall}`}>
+        <div className={styles.heroVisual}>
           <div className={styles.floatingCard}>
             <div className={styles.cardContent}>
               <div className={styles.cardLine}></div>
