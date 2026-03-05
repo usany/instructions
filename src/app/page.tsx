@@ -23,7 +23,7 @@ const translations = {
         answer: 'You can delete your account from the bottom of your profile.'
       },
       q3: {
-        question: 'Can I share service improvement opinions?',
+        question: 'Can I share my service improvement opinions?',
         answer: 'Please send service improvement requests to ahncb@khu.ac.kr. Any feedback is appreciated.'
       }
     },
