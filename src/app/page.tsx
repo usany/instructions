@@ -23,8 +23,8 @@ const translations = {
         answer: 'Anyone can use KHUSAN at Seoul, International, and Gwangneung campuses.'
       },
       q3: {
-        question: 'Want to withdraw from KHUSAN.',
-        answer: 'You can withdraw from the bottom of your profile.'
+        question: 'Want to delete KHUSAN account?',
+        answer: 'You can delete your account from the bottom of your profile.'
       }
     },
   },
