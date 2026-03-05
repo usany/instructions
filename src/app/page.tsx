@@ -109,9 +109,7 @@ export default function RootPage() {
       
       {/* Footer */}
       <footer className={styles.footer}>
-        <div className={styles.footerBottom}>
-          <p>&copy; 2024 KHUSAN. All rights reserved.</p>
-        </div>
+        <p>&copy; 2024 KHUSAN. All rights reserved.</p>
       </footer>
     </>
   );
