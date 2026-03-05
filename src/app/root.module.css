@@ -38,8 +38,6 @@
 
 .heroVisual {
   display: flex;
-}
-.heroVisualSmall {
   flex-direction: column;
 }
 

@@ -51,13 +51,13 @@ export default function RootPage() {
               <div className={styles.cardLine}></div>
             </div>
           </div>
-          <div className={`${styles.buttonGroup}`}>
-            {links[language].map((link: LinkItem, index: number) => (
-              <Button key={index} href={link.href} variant='outlined' className={'colorOne'}>
-                {link.label}
-              </Button>
-            ))}
-          </div>
+        </div>
+        <div className={`${styles.buttonGroup}`}>
+          {links[language].map((link: LinkItem, index: number) => (
+            <Button key={index} href={link.href} variant='outlined' className={'colorOne'}>
+              {link.label}
+            </Button>
+          ))}
         </div>
       </section>
     </>
