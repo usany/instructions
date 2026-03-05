@@ -24,7 +24,7 @@ const translations = {
       },
       q3: {
         question: 'Can I share service improvement opinions?',
-        answer: 'Please send service improvement requests to ahncb@khu.ac.kr. We appreciate any feedback.'
+        answer: 'Please send service improvement requests to ahncb@khu.ac.kr. Any feedback is appreciated.'
       }
     },
   },
