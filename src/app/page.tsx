@@ -110,6 +110,7 @@ export default function RootPage() {
       {/* Footer */}
       <footer className={styles.footer}>
         <p>&copy; 2024 KHUSAN. All rights reserved.</p>
+        <p>개인정보처리방침</p>
       </footer>
     </>
   );
