@@ -84,6 +84,7 @@ const translations = {
         answer: 'Please send service improvement requests to ahncb@khu.ac.kr. Criticism is also appreciated.'
       }
     },
+    policy: 'Privacy policy'
   },
   ko: {
     title: '쿠우산 설명서',
@@ -103,6 +104,7 @@ const translations = {
         answer: '서비스 개선 사항을 ahncb@khu.ac.kr으로 보내주세요. 비판도 감사하게 받겠습니다.'
       },
     },
+    policy: '개인정보처리방침'
   }
 };
 
@@ -171,9 +173,9 @@ export default function RootPage() {
           <p>&copy; 2024 KHUSAN. All rights reserved.</p>
           <button 
             className={styles.privacyLink}
-            onClick={() => setShowPrivacyModal(true)}
+            onClick={() => setShowPrivacyModal(true)} 
           >
-            개인정보처리방침
+            {translation.policy}
           </button>
         </div>
       </footer>
@@ -183,7 +185,7 @@ export default function RootPage() {
         <div className={styles.modalOverlay} onClick={() => setShowPrivacyModal(false)}>
           <div className={styles.modalContent} onClick={(e) => e.stopPropagation()}>
             <div className={styles.modalHeader}>
-              <h2>개인정보처리방침</h2>
+              <h2>{translation.policy}</h2>
               <button 
                 className={styles.closeButton}
                 onClick={() => setShowPrivacyModal(false)}
