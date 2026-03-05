@@ -104,6 +104,23 @@
 .cardLine:nth-child(2) { width: 60%; }
 .cardLine:nth-child(3) { width: 70%; }
 
+/* Footer Styles */
+.footer {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.05), rgba(139, 92, 246, 0.05));
+  border-top: 1px solid rgba(99, 102, 241, 0.1);
+  padding: 3rem 1rem 1rem;
+  margin-top: 4rem;
+}
+
+.footerBottom {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding-top: 2rem;
+  text-align: center;
+  color: var(--text-muted, #6b7280);
+  font-size: 0.9rem;
+}
+
 .faqItem {
   background: var(--primary);
   border: 1px solid var(--primary-hover);
