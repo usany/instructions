@@ -6,6 +6,7 @@ import { LinkItem } from '@/types/links';
 import links from 'links';
 import { Button } from '@mui/material';
 import RainAnimation from '@/components/RainAnimation';
+import { useEffect, useState } from 'react';
 
 const translations = {
   en: {
@@ -21,6 +22,19 @@ const translations = {
 export default function RootPage() {
   const { language } = useLanguage();
   const translation = translations[language];
+  const [isLargeScreen, setIsLargeScreen] = useState(false);
+
+  useEffect(() => {
+    const checkScreenSize = () => {
+      setIsLargeScreen(window.innerWidth >= 1024); // lg breakpoint
+    };
+
+    checkScreenSize();
+    window.addEventListener('resize', checkScreenSize);
+
+    return () => window.removeEventListener('resize', checkScreenSize);
+  }, []);
+  
   return (
     <>
       <RainAnimation />
@@ -29,12 +43,21 @@ export default function RootPage() {
         <p className={styles.subtitle}>
           {translation.subtitle}
         </p>
-        <div className={`${styles.buttonGroup}`}>
-          {links[language].map((link: LinkItem, index: number) => (
-            <Button key={index} href={link.href} variant='outlined' className={'colorOne'}>
-              {link.label}
-            </Button>
-          ))}
+        <div className={`${styles.heroVisual} ${isLargeScreen ? '' : styles.heroVisualSmall}`}>
+          <div className={styles.floatingCard}>
+            <div className={styles.cardContent}>
+              <div className={styles.cardLine}></div>
+              <div className={styles.cardLine}></div>
+              <div className={styles.cardLine}></div>
+            </div>
+          </div>
+          <div className={`${styles.buttonGroup}`}>
+            {links[language].map((link: LinkItem, index: number) => (
+              <Button key={index} href={link.href} variant='outlined' className={'colorOne'}>
+                {link.label}
+              </Button>
+            ))}
+          </div>
         </div>
       </section>
     </>

@@ -16,7 +16,6 @@
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   background-clip: text;
-  animation: gradientShift 3s ease-in-out infinite;
 }
 
 .subtitle {
@@ -35,3 +34,45 @@
   max-width: 800px;
   width: 100%;
 }
+
+
+.heroVisual {
+  display: flex;
+}
+.heroVisualSmall {
+  flex-direction: column;
+}
+
+.floatingCard {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.1), rgba(139, 92, 246, 0.1));
+  border: 1px solid rgba(99, 102, 241, 0.2);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+  animation: cardFloat 4s ease-in-out infinite;
+  box-shadow: var(--shadow-xl);
+  width: 300px;
+  height: 200px;
+}
+
+@keyframes cardFloat {
+  0%, 100% { transform: translateY(0px) rotateX(0deg); }
+  50% { transform: translateY(-10px) rotateX(2deg); }
+}
+
+.cardContent {
+  display: flex;
+  gap: 0.75rem;
+  flex-direction: column;
+}
+
+.cardLine {
+  height: 8px;
+  background: linear-gradient(90deg, var(--primary-color), var(--secondary-color));
+  border-radius: 4px;
+  opacity: 0.6;
+}
+
+.cardLine:nth-child(1) { width: 80%; }
+.cardLine:nth-child(2) { width: 60%; }
+.cardLine:nth-child(3) { width: 70%; }
