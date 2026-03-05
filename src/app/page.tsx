@@ -83,7 +83,7 @@ export default function RootPage() {
       </section>
       <section id="faq" className={styles.faq}>
         <div className={styles.container}>
-          <h2 className={styles.sectionTitle}>{translation.faq.title}</h2>
+          {/* <h2 className={styles.sectionTitle}>{translation.faq.title}</h2> */}
           <div className={styles.faqList}>
             {[
               { q: translation.faq.q1.question, a: translation.faq.q1.answer },
