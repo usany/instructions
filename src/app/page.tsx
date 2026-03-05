@@ -63,6 +63,13 @@ export default function RootPage() {
           {translation.subtitle}
         </p>
       </section>
+      <div className={`${styles.buttonGroup}`}>
+        {links[language].map((link: LinkItem, index: number) => (
+          <Button key={index} href={link.href} variant='outlined' className={'colorOne'}>
+            {link.label}
+          </Button>
+        ))}
+      </div>
       <section className={styles.heroContent}>
         <div className={styles.heroVisual}>
           <div className={styles.floatingCard}>
@@ -73,38 +80,31 @@ export default function RootPage() {
             </div>
           </div>
         </div>
-        <div className={`${styles.buttonGroup}`}>
-          {links[language].map((link: LinkItem, index: number) => (
-            <Button key={index} href={link.href} variant='outlined' className={'colorOne'}>
-              {link.label}
-            </Button>
-          ))}
-        </div>
-      </section>
-      <section id="faq" className={styles.faq}>
-        <div className={styles.container}>
-          {/* <h2 className={styles.sectionTitle}>{translation.faq.title}</h2> */}
-          <div className={styles.faqList}>
-            {[
-              { q: translation.faq.q1.question, a: translation.faq.q1.answer },
-              { q: translation.faq.q2.question, a: translation.faq.q2.answer },
-              { q: translation.faq.q3.question, a: translation.faq.q3.answer }
-            ].map((item, index) => (
-              <div key={index} className={styles.faqItem}>
-                <button 
-                  className={styles.faqQuestion}
-                  onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
-                >
-                  {item.q}
-                  <span className={`${styles.faqIcon} ${expandedFaq === index ? styles.expanded : ''}`}></span>
-                </button>
-                <div className={`${styles.faqAnswer} ${expandedFaq === index ? styles.open : ''}`}>
-                  {item.a}
+        <section id="faq" className={styles.faq}>
+          <div className={styles.container}>
+            {/* <h2 className={styles.sectionTitle}>{translation.faq.title}</h2> */}
+            <div className={styles.faqList}>
+              {[
+                { q: translation.faq.q1.question, a: translation.faq.q1.answer },
+                { q: translation.faq.q2.question, a: translation.faq.q2.answer },
+                { q: translation.faq.q3.question, a: translation.faq.q3.answer }
+              ].map((item, index) => (
+                <div key={index} className={styles.faqItem}>
+                  <button 
+                    className={styles.faqQuestion}
+                    onClick={() => setExpandedFaq(expandedFaq === index ? null : index)}
+                  >
+                    {item.q}
+                    <span className={`${styles.faqIcon} ${expandedFaq === index ? styles.expanded : ''}`}></span>
+                  </button>
+                  <div className={`${styles.faqAnswer} ${expandedFaq === index ? styles.open : ''}`}>
+                    {item.a}
+                  </div>
                 </div>
-              </div>
-            ))}
+              ))}
+            </div>
           </div>
-        </div>
+        </section>
       </section>
     </>
   );
