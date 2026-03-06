@@ -102,3 +102,92 @@ In local development mode, if Azure SQL connection is not configured, the app wi
 The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+
+unify
+
+Access KHUSAN Documentation (https://maps.khusan.co.kr)
+
+## KHUSAN Documentation
+
+This is a [Next.js](https://nextjs.org) project explaining usage of [KHUSAN](https://khusan.co.kr).
+
+### Contents
+
+- Platform: Where you can find KHUSAN
+- Status: Where you can check ongoing cards and conversations
+- Register: Allows you to register a sharing card so other users can see
+- Board: Shows registered cards
+- Profile: Shows user profiles
+- Search: Allows you to search for users
+- Chat: Allows conversations with other users
+- Exhibition: Allows you to register umbrella images
+- Report: Allows you to report problems encountered while using the service
+- Playlist: Umbrella playlist
+
+usany.github.io
+
+Access KHUSAN (https://khusan.co.kr)
+
+## KHUSAN
+A campus umbrella sharing app for KHU.
+
+KHUSAN is a PWA based on [Vite](https://vite.dev)+[React](https://react.dev).
+
+Currently available in
+* [Web: KHUSAN.co.kr](https://khusan.co.kr)
+* [Android: Onestore](https://m.onestore.co.kr/v2/ko-kr/app/0000776823),
+* [Windows: MS store](https://apps.microsoft.com/detail/9n7801hsf6vh?hl=en-US&gl=US),
+
+sending
+
+HTTP Server for KHUSAN (https://khusan.co.kr)
+
+## Routes
+This is an [Next.js](https://nextjs.org) project connected to KHUSAN.
+- `/` GET health check
+
+- `/mail` POST account verification mail to a user
+  - request schema validation
+  
+    const EmailRequestSchema = zod.object({
+      to: zod.string().email('Invalid email address'),
+      number: zod.string().min(1, 'Number is required'),
+      language: zod.enum(['ko', 'en']).default('en')
+    });
+- `/api/comments/:slug` GET comments of a specific slug page from DB    
+- `/api/comments` POST a new comment slug page to DB
+  - request schema validation
+
+    const CreateCommentSchema = zod.object({
+      slug: zod.string().min(1, 'Slug is required'),
+      author: zod.string().min(1, 'Author name is required').max(100, 'Author name too long'),
+      content: zod.string().min(1, 'Content is required').max(1000, 'Content too long'),
+      password: zod.string().min(1, 'Password is required').max(50, 'Password too long'),
+      reply_to: zod.number().optional()
+    });
+
+- `/api/comments/verification/:id` POST password verification of a specific comment
+  - request schema validation
+
+    const VerifyPasswordSchema = zod.object({
+      password: zod.string().min(1, 'Password is required').max(50, 'Password too long')
+    });
+
+- `/api/comments/:id` PUT or DELETE a specific comment
+  - request schema validation
+  
+serviceWithDeno
+
+WebSocket Server for KHUSAN (https://khusan.co.kr)
+
+## Structure
+This is an [Next.js](https://nextjs.org) project connected to KHUSAN.
+
+### Routes
+- `/` GET health check
+- `/mail` POST account verification mail to a user
+- `/api/comments/:slug` GET comments of a specific slug page from DB
+- `/api/comments` POST a new comment slug page to DB
+- `/api/comments/:id` PUT or DELETE a specific comment
+- `/api/comments/verification/:id` POST password verification of a specific comment
+
