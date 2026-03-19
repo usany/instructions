@@ -4,8 +4,9 @@ import React, { useState, memo } from 'react';
 import { useQuery, useMutation, useQueryClient } from 'react-query';
 import { useLanguage } from '../../context/LanguageContext';
 import styles from './Comments.module.css';
+import CommentsFetch from './CommentsFetch';
 
-interface Comment {
+export interface Comment {
   id: number;
   slug: string;
   author: string;
@@ -401,6 +402,7 @@ export default memo(function Comments({ slug }: CommentsProps) {
       {/* Comments List */}
       {!isLoading && (
         <div className={styles.commentsList}>
+          <CommentsFetch />
           {comments.length === 0 ? (
             <p className={styles.noComments}>{t.noComments}</p>
           ) : (
