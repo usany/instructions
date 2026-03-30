@@ -12,7 +12,8 @@ const yoga = createYoga({
         hello: () => 'Hello Deno!'
       }
     }
-  })
+  }),
+  graphqlEndpoint: '/graphql'
 })
  
 Deno.serve(yoga, {
