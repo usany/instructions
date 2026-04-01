@@ -8,90 +8,103 @@ const env = await load({
   // optional: also export to the process environment (so Deno.env can read it)
   export: true,
 });
-
-const yoga = createYoga({
-  schema: createSchema({
-    typeDefs: `
+const schema = `
   type BusArrivalInfo {
-    plateNo: String
-    remainTime: String
-    remainingStops: String
-    location: String
-    lowPlate: String
-    busType: String
-    isLast: String
-    isFullFlag: String
+    arrmsg1: String
+    rtNm: String
+    vehId1: String
+    firstTm: String
+    lastTm: String
+    term: String
+    stId: String
   }
 
-  type BusRouteInfo {
-    routeId: String
+  type GyeonggiBusArrivalInfo {
     routeName: String
-    routeType: String
-    routeTypeName: String
-    company: String
-    firstBusTime: String
-    lastBusTime: String
-    intervalTime: String
-    routeLength: String
+    predictTime1: String
+    locationNo1: String
+    stationNm1: String
+  }
+    
+  type GyeonggiBusRouteInfo {
+    routeName: String
+    upFirstTime: String
+    upLastTime: String
+    peekAlloc: String
+    nPeekAlloc: String
+    satPeekAlloc: String
+    satNPeekAlloc: String
+    sunPeekAlloc: String
+    sunNPeekAlloc: String
+    wePeekAlloc: String
+    weNPeekAlloc: String
   }
 
-  type ResponseHeader {
-    resultCode: String
-    resultMsg: String
+  type SeoulMsgHeader {
+    headerCd: String
+    headerMsg: String
+    itemCount: String
   }
 
-  type ResponseBody {
-    items: ResponseItems
-  }
-
-  type ResponseItems {
-    item: [BusArrivalInfo]
-  }
-
-  type SeoulBusResponse {
-    resultCode: String
-    resultMsg: String
+  type SeoulMsgBody {
     itemList: [BusArrivalInfo]
   }
 
+  type SeoulResponse {
+    msgHeader: SeoulMsgHeader
+    msgBody: SeoulMsgBody
+  }
+
+  type SeoulBusResponse {
+    response: SeoulResponse
+  }
+
+  type GyeonggiHeader {
+    resultCode: String
+    resultMsg: String
+  }
+
+  type GyeonggiBody {
+    busArrivalList: [GyeonggiBusArrivalInfo]
+  }
+
   type GyeonggiBusResponse {
-    response: GyeonggiResponseWrapper
+    response: GyeonggiResponse
   }
 
-  type GyeonggiResponseWrapper {
-    header: ResponseHeader
-    body: ResponseBody
+  type GyeonggiResponse {
+    msgHeader: GyeonggiHeader
+    msgBody: GyeonggiBody
   }
-
-  type RouteResponseItems {
-    item: [BusRouteInfo]
-  }
-
-  type RouteResponseBody {
-    items: RouteResponseItems
+  type GyeonggiRouteBody {
+    busRouteInfoItem: GyeonggiBusRouteInfo
   }
 
   type GyeonggiRouteResponse {
-    response: GyeonggiRouteWrapper
+    response: GyeonggiRouteResponseData
   }
 
-  type GyeonggiRouteWrapper {
-    header: ResponseHeader
-    body: RouteResponseBody
+  type GyeonggiRouteResponseData {
+    msgHeader: GyeonggiHeader
+    msgBody: GyeonggiRouteBody
   }
 
   type Query {
     hello: String
-    seoulBusArrival(routeId: String!): SeoulBusResponse
-    gyeonggiBusArrival(stationId: String!): GyeonggiBusResponse
-    gyeonggiBusRoute(routeId: String!): GyeonggiRouteResponse
-    busArrival(routeId: String!): String
+    seoulBusArrival(routeId: Int!): SeoulBusResponse
+    gyeonggiBusArrival(stationId: Int!): GyeonggiBusResponse
+    gyeonggiBusRoute(routeId: Int!): GyeonggiRouteResponse
+    busArrival(routeId: Int!): String
   }
 
   type Mutation {
     setMessage(message: String!): String
   }
-`,
+`;
+
+const yoga = createYoga({
+  schema: createSchema({
+    typeDefs: schema,
     resolvers: {
       Query: {
         seoulBusArrival: async ({ routeId }: { routeId: String }) => {
