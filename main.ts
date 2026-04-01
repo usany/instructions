@@ -1,5 +1,6 @@
 import { createSchema, createYoga } from 'graphql-yoga'
 import xmlToJson from './xmlToJson.ts'
+import { load } from "@std/dotenv";
 import { load } from "jsr:@std/dotenv";
 
 const env = await load({
