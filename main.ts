@@ -293,34 +293,6 @@ const yoga = createYoga({
       },
     }
   }),
-
-  gyeonggiBusRoute: async ({ routeId }: { routeId: String }) => {
-    try {
-      const apiKey = env.USERID;
-      const url = `https://apis.data.go.kr/6410000/busrouteservice/v2/getBusRouteInfoItemv2?serviceKey=${apiKey}&routeId=${routeId}&format=json`;
-      const response = await fetch(url);
-      const data = await response.json();
-      return data;
-    } catch (error) {
-      console.error("Error fetching Gyeonggi bus route data:", error);
-      return {
-        response: {
-          header: {
-            resultCode: "ERROR",
-            resultMsg: "Error fetching Gyeonggi bus route data",
-          },
-          body: {
-            items: {
-              item: [],
-            },
-          },
-        },
-      };
-    }
-  },
-      }
-    }
-  }),
   graphqlEndpoint: '/graphql'
 })
  
