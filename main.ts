@@ -119,11 +119,10 @@ const root = {
               return ({
               arrmsg1: item.arrmsg1 || '',
               rtNm: item.rtNm || '',
-              vehId1: item.vehId1 || '',
               firstTm: item.firstTm || '',
               lastTm: item.lastTm || '',
               term: item.term || '',
-              stId: item.stId || ''
+              stNm: item.stNm || ''
             })}) || []
           }
         }
