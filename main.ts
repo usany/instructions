@@ -13,7 +13,6 @@ const schema = `
   type BusArrivalInfo {
     arrmsg1: String
     rtNm: String
-    vehId1: String
     firstTm: String
     lastTm: String
     term: String
