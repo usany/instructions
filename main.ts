@@ -17,7 +17,6 @@ const schema = `
     firstTm: String
     lastTm: String
     term: String
-    stId: String
     stNm: String
   }
 
