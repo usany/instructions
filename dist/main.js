@@ -233,7 +233,7 @@ export default function handler(req, res) {
                 }
             },
         }),
-        graphqlEndpoint: '/api/graphql'
+        graphqlEndpoint: '/graphql'
     });
     return yoga(req, res);
 }
@@ -252,10 +252,18 @@ const yoga = createYoga({
             }
         },
     }),
-    graphqlEndpoint: '/api/graphql'
+    graphqlEndpoint: '/api/graphql',
+    cors: {
+        origin: ['http://localhost:3000', 'http://localhost:8081'
+            // , '*'
+        ],
+        credentials: true,
+        methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
+        allowedHeaders: ['Content-Type', 'Authorization']
+    }
 });
-const port = process.env.PORT || 4000;
+const port = process.env.PORT || 8000;
 const server = createServer(yoga);
 server.listen(port, () => {
-    console.log(`🚀 GraphQL Server ready at http://localhost:${port}/api/graphql`);
+    console.log(`ready at http://localhost:${port}/api/graphql`);
 });
