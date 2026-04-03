@@ -272,5 +272,5 @@ const port = process.env.PORT || 4000
 const server = createServer(yoga)
 
 server.listen(port, () => {
-  console.log(`🚀 GraphQL Server ready at http://localhost:${port}/api/graphql`)
+  console.log(`ready at http://localhost:${port}/api/graphql`)
 })
