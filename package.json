@@ -5,9 +5,9 @@
   "type": "module",
   "main": "api/index.js",
   "scripts": {
-    "dev": "tsc && node dist/main.js",
-    "start": "node dist/main.js",
-    "build": "tsc --outDir public && mkdir -p public"
+    "dev": "node --env-file=.env main.ts",
+    "build": "tsc --outDir public && mkdir -p public",
+    "preview": "node public/main.js"
   },
   "dependencies": {
     "graphql-yoga": "^3.7.3",
