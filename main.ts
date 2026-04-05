@@ -397,6 +397,10 @@ app.use(cors(corsOptions))
 app.get('/', (req, res) => {
   res.send('GraphQL Server is running! Visit /graphql for the GraphQL playground.')
 })
+app.get('/graphql', (req, res) => {
+  console.log(req)
+  console.log(res)
+})
 
 const port = process.env.PORT || 4000
 
