@@ -352,13 +352,19 @@ yogaRouter.use(
     }
   })
 )
+const corsOptions = {
+	// origin: '*',
+	// origin: 'http://localhost:5173',
+	// origin: 'https://usany.github.io',
+	// origin: 'https://usany-github-io.vercel.app',
+	// origin: 'https://khusan.co.kr',
+	origin: [
+		"http://localhost:8081",
+	],
+	optionsSuccessStatus: 200,
+};
 
-yogaRouter.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:8081'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}))
+yogaRouter.use(cors(corsOptions))
 
 yogaRouter.use(yoga)
 
@@ -368,12 +374,8 @@ app.use(yoga.graphqlEndpoint, yogaRouter)
 
 // Add the global CSP configuration for the rest of your server
 app.use(helmet())
-app.use(cors({
-  origin: ['http://localhost:3000', 'http://localhost:8081'],
-  credentials: true,
-  methods: ['GET', 'POST', 'PUT', 'DELETE', 'OPTIONS'],
-  allowedHeaders: ['Content-Type', 'Authorization']
-}))
+
+app.use(cors(corsOptions))
 
 // Add a root route to fix "Cannot GET /" error
 app.get('/', (req, res) => {
