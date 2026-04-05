@@ -6,8 +6,8 @@
   "main": "api/index.js",
   "scripts": {
     "dev": "tsc && node dist/main.js",
-    "build": "tsc",
-    "start": "node dist/main.js"
+    "start": "node dist/main.js",
+    "build": "tsc --outDir public && mkdir -p public"
   },
   "dependencies": {
     "graphql-yoga": "^3.7.3",
