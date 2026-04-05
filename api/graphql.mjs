@@ -358,7 +358,7 @@ app.use(cors({
 
 // Add a root route to fix "Cannot GET /" error
 app.get('/', (req, res) => {
-  res.send('GraphQL Server is running! Visit /graphql for the GraphQL playground.')
+  res.send('GraphQL Server is running! Visit /graphql.')
 })
 
 // You can now register your other endpoints that will not be affected by the GraphiQL CSP configuration
